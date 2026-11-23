@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState, type ReactNode } from "react";
 import { COMMUNES, SERVICES } from "@/lib/sal7li";
 
@@ -90,6 +90,11 @@ function App() {
         {err && <p className="text-sm text-destructive">{err}</p>}
         <button className="btn-main" onClick={doLogin}>دخول</button>
         <button className="w-full text-sm text-primary" onClick={() => { setErr(""); setStep("signup"); }}>ليس لديك حساب؟ إنشاء حساب</button>
+        <div className="border-t pt-4 text-center">
+          <Link to="/craftsman" className="inline-flex items-center justify-center gap-2 text-sm font-semibold text-secondary">
+            هل أنت حرفي؟ افتح لوحة الطلبات ←
+          </Link>
+        </div>
       </Shell>
     );
 
